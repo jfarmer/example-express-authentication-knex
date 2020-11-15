@@ -5,7 +5,9 @@
 - [Requirements](#requirements)
 - [Getting Started](#getting-started)
 - [Heroku](#heroku)
-  - [Creating A New App](#creating-a-new-app)
+  - [Creating A New App On Heroku](#creating-a-new-app-on-heroku)
+  - [Deploying To Heroku](#deploying-to-heroku)
+- [Project Structure](#project-structure)
 
 ## Requirements
 
@@ -34,9 +36,9 @@ This example requires Node.js and a local PostgreSQL database.
 
 ## Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+This example is ready to deploy to Heroku out of the box, but you'll have to create your own application. Make sure to run the migrations after deploying for the first time (or if you ever create new migrations).
 
-### Creating A New App
+### Creating A New App On Heroku
 
 1. If necessary, log into Heroku with:
 
@@ -56,4 +58,33 @@ This example requires Node.js and a local PostgreSQL database.
    heroku addons:create heroku-postgresql:hobby-dev
    ```
 
-1
+### Deploying To Heroku
+
+1. Deploy to Heroku with:
+
+   ```console
+   git push heroku
+   ```
+
+1. Migrate the Heroku's PostgreSQL database to the latest schema with:
+
+   ```console
+   heroku run npm run db:migrate
+   ```
+
+1. Open the Heroku app in your browser with:
+
+   ```console
+   heroku open
+   ```
+
+## Project Structure
+
+- `models/` contains files for interacting with specific database tables
+  - `models/User.js` contains functions for interacting with Users, e.g., finding, creating, authenticating, etc.
+- `routes/` contains files for handling incoming requests
+  - `routes/index.js` contains all the sign-up related routes
+- `lib/` contains miscellaneous helpers and other files
+  - `lib/database.js` loads the database configuration and exports a Knex client
+  - `lib/sessionHandler.js` contains Express middleware that allows session data to be stored securely in cookies
+  - `lib/loadUser.js` contains Express middlware that checks to see if the current session has a user associated with it and, if so, adds a `request.user` object

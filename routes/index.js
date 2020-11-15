@@ -1,7 +1,7 @@
 let debug = require('debug')('express-app:auth');
 
 let Router = require('express-promise-router');
-let User = require('./User');
+let User = require('../models/User');
 
 let router = new Router();
 

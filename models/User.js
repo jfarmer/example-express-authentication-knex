@@ -8,7 +8,7 @@
 //   https://auth0.com/blog/hashing-passwords-one-way-road-to-security/
 let bcrypt = require('bcrypt');
 
-let db = require('./database');
+let db = require('../lib/database');
 
 let BCRYPT_SALT_ROUNDS = 10;
 
@@ -22,6 +22,8 @@ let User = {
   },
 
   create: async function(userData) {
+    // If userData contains a password property, create a password
+    // digest w/ bcrypt and pass that to the database, instead.
     if (userData.password) {
       let password = userData.password;
       delete userData.password;

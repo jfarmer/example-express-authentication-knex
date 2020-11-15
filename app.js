@@ -31,13 +31,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(app.root('public')));
 
-let sessionHandler = require('./sessionHandler');
+let sessionHandler = require('./lib/sessionHandler');
 app.use(sessionHandler);
 
-let loadUser = require('./loadUser');
+let loadUser = require('./lib/loadUser');
 app.use(loadUser);
 
-let routes = require('./routes');
+let routes = require('./routes/index');
 app.use('/', routes);
 
 // catch 404 and forward to error handler
