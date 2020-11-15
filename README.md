@@ -11,7 +11,9 @@
 
 ## Requirements
 
-This example requires Node.js and a local PostgreSQL database.
+This example requires Node.js and a working local PostgreSQL database.
+
+It uses the [bulma][url-bulma] CSS framework for the layout.
 
 ## Getting Started
 
@@ -88,3 +90,5 @@ This example is ready to deploy to Heroku out of the box, but you'll have to cre
   - `lib/database.js` loads the database configuration and exports a Knex client
   - `lib/sessionHandler.js` contains Express middleware that allows session data to be stored securely in cookies
   - `lib/loadUser.js` contains Express middlware that checks to see if the current session has a user associated with it and, if so, adds a `request.user` object
+
+[url-bulma]: https://bulma.io/
