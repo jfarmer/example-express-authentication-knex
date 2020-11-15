@@ -1,5 +1,5 @@
 {
-  "name": "template-express",
+  "name": "example-express-authentication-knex",
   "version": "0.1.0",
   "private": true,
   "keywords": [
@@ -7,21 +7,21 @@
     "express",
     "node"
   ],
-  "homepage": "https://github.com/jfarmer/template-express#readme",
+  "homepage": "https://github.com/jfarmer/example-express-authentication-knex#readme",
   "bugs": {
-    "url": "https://github.com/jfarmer/template-express/issues"
+    "url": "https://github.com/jfarmer/example-express-authentication-knex/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jfarmer/template-express.git"
+    "url": "git+https://github.com/jfarmer/example-express-authentication-knex.git"
   },
   "license": "CC-BY-SA-4.0",
   "author": "Jesse Farmer <jesse@20bits.com>",
   "scripts": {
-    "db:create": "createdb express_file_upload_dev",
-    "db:drop": "dropdb express_file_upload_dev",
+    "db:create": "createdb express_auth_dev",
+    "db:drop": "dropdb express_auth_dev",
     "db:migrate": "knex migrate:latest",
-    "db:psql": "psql express_file_upload_dev",
+    "db:psql": "psql express_auth_dev",
     "db:setup": "npm run db:create && npm run db:migrate",
     "dev": "nodemon",
     "lint": "eslint .",
