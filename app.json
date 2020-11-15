@@ -1,0 +1,10 @@
+{
+  "name": "Express User Authentication Example",
+  "description": "An example Express app illustrating user authentication",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": [
+    "node",
+    "express",
+    "postgresql"
+  ]
+}
