@@ -1,1 +1,1 @@
-# Express Template
+# User Authentication — Example Express App
