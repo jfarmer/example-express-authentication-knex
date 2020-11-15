@@ -1,3 +1,15 @@
-<h1>{{message}}</h1>
-<h2>{{error.status}}</h2>
-<pre>{{error.stack}}</pre>
+<div class="content">
+  <h1 class="title">Error!</h1>
+  {{#if error.status}}
+    <h2 class="subtitle">{{error.status}}</h2>
+  {{/if}}
+  <p class="subtitle">Something went wrong.</p>
+
+  <h3>Error Message</h3>
+  <p>{{message}}</p>
+
+  {{#if error}}
+    <h3>Stack Trace</h3>
+    <pre>{{error.stack}}</pre>
+  {{/if}}
+</div>

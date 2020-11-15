@@ -1,7 +1,6 @@
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
-let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let dotenv = require('dotenv');
 
@@ -30,8 +29,13 @@ if (app.inDevelopment()) {
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
 app.use(express.static(app.root('public')));
+
+let sessionHandler = require('./sessionHandler');
+app.use(sessionHandler);
+
+let loadUser = require('./loadUser');
+app.use(loadUser);
 
 let routes = require('./routes');
 app.use('/', routes);

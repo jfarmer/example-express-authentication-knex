@@ -28,7 +28,9 @@
     "start": "cross-env DEBUG=\"express-app:*,knex:query\" node ./bin/www"
   },
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "cookie-parser": "^1.4.5",
+    "cookie-session": "^1.4.0",
     "debug": "^4.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
