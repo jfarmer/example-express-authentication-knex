@@ -1,7 +1,9 @@
 {
   "name": "Express User Authentication Example",
   "description": "An example Express app illustrating user authentication",
-  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
   "keywords": [
     "node",
     "express",
